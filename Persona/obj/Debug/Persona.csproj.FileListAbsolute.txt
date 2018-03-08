@@ -1,0 +1,16 @@
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.csprojResolveAssemblyReference.cache
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.Properties.Resources.resources
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.csproj.GenerateResource.Cache
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.csproj.CoreCompileInputs.cache
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\Database\PersonaDb.mdf
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\Database\PersonaDb_log.ldf
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\Persona.exe.config
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\Persona.exe
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\Persona.pdb
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\EntityFramework.dll
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\EntityFramework.xml
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.exe
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.pdb
+C:\Users\DARY\Desktop\aplicada I\Persona\Persona\obj\Debug\Persona.Entidad.FormRegistro.resources
