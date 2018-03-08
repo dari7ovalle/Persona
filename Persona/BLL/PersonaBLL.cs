@@ -20,11 +20,14 @@ namespace Persona.BLL
             {
                 Contexto db = new Contexto();
                 db.Persona.Add(persona);
-                foreach (TelefonosDetalles detalle in persona.Detalles)
-                    db.Telefonodetalle.Add(detalle);
-
                 db.SaveChanges();
-                db.Dispose();
+
+                foreach (TelefonosDetalles detalle in persona.Detalles)
+                {
+                    db.Telefonodetalle.Add(detalle);
+                    db.SaveChanges();
+                }
+
                 flag = true;
             }
             catch (Exception)
@@ -33,6 +36,21 @@ namespace Persona.BLL
             }
 
             return flag;
+        }
+
+        public static Personas Buscar(int id)
+        {
+            Personas persona = null;
+            try
+            {
+                Contexto db = new Contexto();
+                persona = db.Persona.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return persona;
         }
 
     }

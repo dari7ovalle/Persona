@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,9 @@ namespace Persona.Entidad
 {
     public class TelefonosDetalles
     {
+        [Key]
         public int Id { get; set; }
-        public int TelefonoId { get; set; }
-        public int TipoTelefono { get; set; }
+        public string TipoTelefono { get; set; }
         public string NumeroTelefono { get; set; }
         public int PersonaId { get; set; }
 
@@ -18,22 +19,21 @@ namespace Persona.Entidad
         public TelefonosDetalles()
         {
             this.Id = 0;
-            this.TelefonoId = 0;
-            this.TipoTelefono = 0;
+            this.TipoTelefono = "";
             this.NumeroTelefono = " ";
-            this.PersonaId = 0;
+            this.PersonaId = 1;
         }
-        public TelefonosDetalles(int Id, int TelefonoId, int TipoTelefono, string NumeroTelefono, int PersonaId)
+
+        public TelefonosDetalles(int Id, int TelefonoId, string TipoTelefono, string NumeroTelefono, int PersonaId)
         {
             this.Id = Id;
-            this.TelefonoId = TelefonoId;
             this.TipoTelefono = TipoTelefono;
             this.NumeroTelefono= NumeroTelefono;
             this.PersonaId = PersonaId;
             
         }
 
-        public TelefonosDetalles(int TipoTelefono, string NumeroTelefono)
+        public TelefonosDetalles(string TipoTelefono, string NumeroTelefono)
         {
             this.TipoTelefono = TipoTelefono;
             this.NumeroTelefono = NumeroTelefono;

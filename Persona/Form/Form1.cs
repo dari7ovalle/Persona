@@ -29,33 +29,33 @@ namespace Persona.Entidad
 
         private Personas LlenarClase()
         {
-            bool retorno = true;
-            if (NombrestextBox.Text.Length <= 0)
+            personas = new Personas();
+            personas.Nombre = NombrestextBox.Text;
+            personas.Fecha = FechadateTimePicker.Text;
+
+            for (int i = 0; i >= TelefonosdataGridView.RowCount; i++)
             {
-                retorno = false;
+                personas.Detalles.Add(new TelefonosDetalles(TelefonosdataGridView.Rows[i].Cells[0].Value.ToString(), TelefonosdataGridView.Rows[i].Cells[1].Value.ToString()));
+
             }
-            else
-            {
-                personas.Nombre = NombrestextBox.Text;
-                personas.Fecha = FechadateTimePicker.Text;
-            }
-            if (TelefonosdataGridView.Rows.Count > 0)
-            {
-                for (int i = 0; i < TelefonosdataGridView.RowCount; i++)
-                {
-                    personas.Detalles.Add(new TelefonosDetalles(TipoTelefonoscomboBox.SelectedIndex, TelefonotextBox.Text));
-                }
-            }
-            else
-            {
-                retorno = false;
-            }
+
             return personas;
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(TipoTelefonoscomboBox.SelectedItem.ToString());
+            Personas personas = PersonaBLL.Buscar(int.Parse(PersonaIdtextBox.Text));
+            if (personas != null)
+            {
+                NombrestextBox.Text = personas.Nombre;
+                FechadateTimePicker.Text = personas.Fecha;
+                TelefonosdataGridView.DataSource = personas.Detalles;
+            }
+            else
+            {
+                MessageBox.Show("No Existe");
+            }
+
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)

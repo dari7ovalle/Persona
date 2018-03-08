@@ -9,7 +9,7 @@ namespace Persona.Entidad
     public class TipoTelefono
     {
         public enum TipoT {
-             Celular = 0, Casa 
+             Celular = 0, Casa = 1
 
             }
 
