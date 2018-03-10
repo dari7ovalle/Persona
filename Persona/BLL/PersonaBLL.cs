@@ -20,13 +20,14 @@ namespace Persona.BLL
             {
                 Contexto db = new Contexto();
                 db.Persona.Add(persona);
-                db.SaveChanges();
+               // db.SaveChanges();
 
                 foreach (TelefonosDetalles detalle in persona.Detalles)
                 {
                     db.Telefonodetalle.Add(detalle);
-                    db.SaveChanges();
+                   
                 }
+                db.SaveChanges();
 
                 flag = true;
             }
@@ -53,5 +54,36 @@ namespace Persona.BLL
             return persona;
         }
 
-    }
+        public static bool eliminar(int Id)
+        {
+            Personas persona = null;
+            bool estado = false;
+            try
+            {
+                Contexto db = new Contexto();
+             persona = db.Persona.Find(Id);
+            db.Persona.Remove(persona);
+                db.SaveChanges();
+
+                estado = true;
+
+            }
+            catch (Exception)
+            {
+                throw;
+
+            }
+            return estado;
+        }
+        public static void BorrarEstudiosPorAlumno(Personas personas)
+        {
+            using (Contexto Contexto = new Contexto())
+            {
+                personas..Clear();
+                Contexto.SaveChanges();
+                Contexto.Dispose();
+            }
+        }
 }
+
+

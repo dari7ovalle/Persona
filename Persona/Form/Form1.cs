@@ -33,7 +33,7 @@ namespace Persona.Entidad
             personas.Nombre = NombrestextBox.Text;
             personas.Fecha = FechadateTimePicker.Text;
 
-            for (int i = 0; i >= TelefonosdataGridView.RowCount; i++)
+            for (int i = 0; i < TelefonosdataGridView.RowCount; i++)
             {
                 personas.Detalles.Add(new TelefonosDetalles(TelefonosdataGridView.Rows[i].Cells[0].Value.ToString(), TelefonosdataGridView.Rows[i].Cells[1].Value.ToString()));
 
@@ -44,7 +44,8 @@ namespace Persona.Entidad
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Personas personas = PersonaBLL.Buscar(int.Parse(PersonaIdtextBox.Text));
+            personas.Detalles.Clear();
+          personas = PersonaBLL.Buscar(int.Parse(PersonaIdtextBox.Text));
             if (personas != null)
             {
                 NombrestextBox.Text = personas.Nombre;
@@ -86,7 +87,15 @@ namespace Persona.Entidad
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            if (PersonaBLL.eliminar(int.Parse(PersonaIdtextBox.Text)))
+            {
+                MessageBox.Show("fue eliminado ");
+            }
+            else
+            {
+                MessageBox.Show("Error al Eliminar");
 
+            }
         }
     }
 }
